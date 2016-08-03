@@ -101,3 +101,19 @@ def channel_analytics(message):
     py.iplot([trace])
 
     message.reply('https://plot.ly/~simmeringc/39/')
+
+@respond_to('hi', re.IGNORECASE)
+def hi(message):
+    message.reply('I can understand hi or HI!')
+    # react with thumb up emoji
+    message.react('+1')
+
+@respond_to('i love you', re.IGNORECASE)
+def love(message):
+	message.reply('I\'m sorry Andy, I\'m so sorry.')
+	message.react('-1')
+
+@listen_to('can someone help me', re.IGNORECASE)
+def help(message):
+    # Message is replied to the sender (prefixed with @user)
+    message.reply('Yes, I can!')
